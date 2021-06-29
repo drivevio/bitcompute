@@ -19,4 +19,20 @@ function addNegativeNumbers(nums: readonly string[]) {
 //      Example problem: -5 + (1)
 //      To solve this problem we would first start by visualizing a number line we start at 0 and we go 1 to the right of 0.
 //      Then we add 5 to the right of 0 which would get a answer of -4.
+function complexAdd(nums: readonly string[]) {
+  const negNums = [];
+  const normalNums = [];
+  const formal = [];
+  nums.map((num) => {
+    if (num.startsWith('-')) {
+      // eslint-disable-next-line functional/immutable-data
+      negNums.push(parseInt(num));
+    } else {
+      // eslint-disable-next-line functional/immutable-data
+      normalNums.push(parseInt(num));
+    }
+  });
+  const norms = normalNums.reduce((a, b) => a + b, 0);
+}
 export { addNegativeNumbers };
+complexAdd(['-1', '-2', '3', '4']);
